@@ -7,6 +7,7 @@ algoritmo "Formacao Triangulos"
 var
 L1, L2, L3: real
 EQ, ES: Logico
+TRI: Logico
 
 inicio
 // Seção de Comandos 
@@ -27,10 +28,14 @@ Escreval ("")
             
 Escreval ("")
 
-         EQ <- (L1 = L2) e (L1 = L3)
-         ES <- (L1 <> L2) ou (L1 <> L3) ou (L2 <> L3)
+
+         TRI <- (L1 < L2+L3) e (L2 < L1+L3) e (L3 < L1+L2)
+         EQ  <- (L1 = L2) e (L1 = L3)
+         ES  <- (L1 <> L2) e (L1 <> L3) e (L2 <> L3)
+         
          
 Escreval ("--------------------------------")
+Escreval ("FORMA TRIANGULO: " , TRI)
 Escreval ("TRIANGULO EQUILATERO: " , EQ)
 Escreval ("TRIANGULO ESCALENO: " , ES)
 Escreval ("--------------------------------")
